@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
     @include('partials._hero')
     @include('partials._search')
 
@@ -11,8 +9,8 @@
     <x-listing-card :listing="$listing"/>
 @endforeach
 
-@else
-<p>No listings found</p>
-@endunless
-</div>
-@endsection()
+        @else
+            <p>No listings found</p>
+        @endunless
+    </div>
+</x-layout>
