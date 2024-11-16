@@ -1,6 +1,6 @@
 <h1>{{$heading}} </h1>
 
-{{--@unless(count($listings))==0)--}}
+@unless(count($listings)==0)
 
 @foreach ($listings as $listing)
 <h2>
@@ -11,6 +11,6 @@
     </p>
 @endforeach
 
-{{--@else--}}
-{{--<p>No listings found</p>--}}
-{{--@endunless--}}
+@else
+<p>No listings found</p>
+@endunless
