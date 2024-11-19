@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 Route::get('/',[ListingController::class,'index'] );
 
+//Show create form
+Route::get('/listings/create',[ListingController::class,'create'] );
 //Single listing
 Route::get('/listings/{listing}',[ListingController::class,'show'] );
+
