@@ -1,21 +1,19 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
+//All listings
 Route::get('/', function () {
     return view('listings',[
         'heading' => 'Latest Listings',
-        'listings' => [
-            [
-                'id' => 1,
-                'title' => 'Listing one',
-                'description' => 'Laravel is a web application framework with expressive, elegant syntax. A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while we sweat the details.',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Listing two',
-                'description' => 'Laravel is a web application framework with expressive, elegant syntax. A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while we sweat the details.',
-            ],
-        ]
+        'listings' => Listing::all()
+    ]);
+});
+
+//Single listing
+Route::get('/listings/{id}', function ($id) {
+    return view('listing',[
+        'listing' => Listing::find($id),
     ]);
 });
