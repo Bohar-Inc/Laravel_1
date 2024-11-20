@@ -14,9 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5)->create();
+        //User::factory(5)->create();
+        $user = User::factory()->create([
+            'name' => 'thadsha',
+            'email' => 'thadsha@gmail.com',
+        ]);
 
-        Listing::factory(6)->create();
+        Listing::factory(6)->create([
+            'user_id' => $user->id
+        ]);
 
 //        Listing::create([
 //            'title' => 'Laravel Senior Developer',
@@ -38,9 +44,9 @@ class DatabaseSeeder extends Seeder
 //            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
 //        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+//        User::factory()->create([
+//            'name' => 'Test User',
+//            'email' => 'test@example.com',
+//        ]);
     }
 }
