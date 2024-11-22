@@ -14,3 +14,8 @@
 1732264965-1360-295587693,1732264965.1073,GET,/listings/create,App\Http\Controllers\ListingController@create,200,96.472978591919,request
 1732265045-8355-759073352,1732265045.7623,GET,/listings/create,App\Http\Controllers\ListingController@create,200,616.45698547363,request
 1732265208-0133-861047560,1732265207.876,GET,/listings/create,App\Http\Controllers\ListingController@create,200,359.63606834412,request
+1732266511-1678-1414956555,1732266511.0971,GET,/listings/create,App\Http\Controllers\ListingController@create,500,1681.3139915466,request
+1732266526-0277-311761696,1732266525.9618,GET,/listings/create,App\Http\Controllers\ListingController@create,200,357.04112052917,request
+1732266530-8848-1222351057,1732266530.8446,POST,/listings,,405,436.96713447571,request
+1732266556-2495-170245393,1732266556.2074,POST,/listings,App\Http\Controllers\ListingController@store,302,139.43600654602,request
+1732266556-3844-355491961,1732266556.353,GET,/listings/create,App\Http\Controllers\ListingController@create,200,80.779075622559,request
