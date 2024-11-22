@@ -1,0 +1,16 @@
+1732264209-2199-201656508,1732264209.122,GET,/listings/create,App\Http\Controllers\ListingController@show,404,204.00190353394,request
+1732264498-7219-1784180363,1732264498.6571,GET,/listings/create,App\Http\Controllers\ListingController@show,404,152.82893180847,request
+1732264504-5166-769935763,1732264504.4752,GET,/listings/create.html,App\Http\Controllers\ListingController@show,404,91.639995574951,request
+1732264557-3725-1672644044,1732264557.3319,GET,/,App\Http\Controllers\ListingController@index,200,145.54190635681,request
+1732264559-6803-1972121769,1732264559.6523,GET,/listings/create,App\Http\Controllers\ListingController@show,404,78.506946563721,request
+1732264595-1370-877834869,1732264595.0973,GET,/listings/create,App\Http\Controllers\ListingController@show,404,95.529079437256,request
+1732264763-8916-6651278,1732264763.8244,GET,/listings/create,App\Http\Controllers\ListingController@show,404,159.51800346375,request
+1732264767-5591-976612580,1732264767.5195,GET,/listings/create,App\Http\Controllers\ListingController@show,404,95.993995666504,request
+1732264810-1906-1350892571,1732264810.1516,GET,/listings/create,App\Http\Controllers\ListingController@show,404,109.56811904907,request
+1732264829-7006-1597036937,1732264829.6597,GET,/listings/create,App\Http\Controllers\ListingController@show,404,107.77902603149,request
+1732264920-9104-2064425843,1732264920.8425,GET,/,App\Http\Controllers\ListingController@index,200,160.25900840759,request
+1732264923-2496-974840339,1732264923.2111,GET,/listings/create,App\Http\Controllers\ListingController@show,404,105.4048538208,request
+1732264963-1443-1354213334,1732264963.1036,GET,/,App\Http\Controllers\ListingController@index,200,105.53622245789,request
+1732264965-1360-295587693,1732264965.1073,GET,/listings/create,App\Http\Controllers\ListingController@create,200,96.472978591919,request
+1732265045-8355-759073352,1732265045.7623,GET,/listings/create,App\Http\Controllers\ListingController@create,200,616.45698547363,request
+1732265208-0133-861047560,1732265207.876,GET,/listings/create,App\Http\Controllers\ListingController@create,200,359.63606834412,request
