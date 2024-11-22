@@ -5,31 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Listing
+class Listing extends Model
 {
-use HasFactory;
-    public static function all(){
-        return  [
-            [
-                'id' =>1,
-                'title' => 'Listing one',
-                'description' => 'Laravel is a web application framework with expressive, elegant syntax. A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while we sweat the details.'
-            ],
-            [
-                'id' =>2,
-                'title' => 'Listing two',
-                'description' => 'Laravel is a web application framework with expressive, elegant syntax. A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while we sweat the details.'
-            ]
-        ];
-    }
+    use HasFactory;
 
-    public static function find($id){
-        $listings = self::all();
+    protected $fillable = ['title', 'tags', 'company', 'location', 'email', 'website', 'description'];
 
-        foreach($listings as $listing){
-            if($listing['id'] == $id){
-                return $listing;
-            }
-        }
-    }
 }
