@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 //All listings
 Route::get('/', [ListingController::class, 'index']);
 
+
 //Show create form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
 
@@ -44,5 +45,9 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 //Log in user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+Route::get('/get_records',[ListingController::class, 'getRecord']);
+
+Route::get('/search', [ListingController::class, 'search']);
 
 

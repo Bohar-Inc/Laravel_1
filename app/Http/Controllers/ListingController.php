@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -11,7 +12,7 @@ class ListingController extends Controller
     // Show all listings
     public function index(){
         return view('listings.index',[
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+           'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
         ]);
     }
 
@@ -38,6 +39,8 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
+
+        $formFields['user_id'] = auth()->id();
 
         if($request->hasFile('logo')){
             $formFields['logo'] = $request->file('logo')->store('logos','public');
@@ -89,7 +92,7 @@ class ListingController extends Controller
         if($listing->user_id != auth()->id()){
             abort(403, 'Unauthorized action.');
         }
-        
+
         $listing->delete();
         return redirect('/')->with('message', 'Listing deleted successfully !');
     }
@@ -97,5 +100,33 @@ class ListingController extends Controller
     //Manage listings
     public function manage(){
         return view('listings.manage',['listings' => auth()->user()->listings()->get()]);
+    }
+
+
+    // In ProductController.php
+
+    public function getRecord():JsonResponse
+    {
+        // Fetch products from the database
+        $listings = Listing::all();
+
+        // Return the products as JSON
+        return response()->json($listings);
+    }
+
+    public function search(Request $request){
+        // Retrieve the search term from the request
+        $search = $request->input('search');
+
+        // Query the database
+        $results = Listing::where('title', 'like', '%' . $search . '%')
+            ->orWhere('description', 'like', '%' . $search . '%')
+            ->orWhere('tags', 'like', '%' . $search . '%')
+            ->get();
+
+        // Return the results
+        return response()->json([
+            'results' => $results,
+        ]);
     }
 }

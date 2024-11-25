@@ -7,8 +7,9 @@
             <p class="mb-4">Login your account to post gigs</p>
         </header>
 
-        <form method="POST" action="/users/authenticate">
+        <form  id="login_form">
             @csrf
+            <div id="message"></div>
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2">Email</label>
                 <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{old('email')}}"/>
@@ -44,3 +45,35 @@
         </form>
     </x-card>
 </x-layout>
+
+<script>
+    $(document).ready(function () {
+        $('#login_form').on('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                _token: $('[name="_token"]').val(),
+                email: $('[name="email"]').val(),
+                password: $('[name="password"]').val(),
+            };
+            // Log the data being sent
+            console.log( formData);
+// AJAX request
+            $.ajax({
+                url: '/users/authenticate', // Laravel route for login
+                method: 'POST',
+                data:formData,
+                success: function (response) {
+                    // $('#message').html(`<p style="color: green;">${response.message}</p>`);
+                    // $('#register_form')[0].reset(); // Reset the form
+                    window.location.href = `/?success=${encodeURIComponent(response.message)}`;
+                },
+                error: function (xhr) {
+                    const errors = xhr.responseJSON.errors;
+                    $('#message').append(`<p style="color: red;">${errors}</p>`);
+                }
+            });
+        });
+    });
+</script>

@@ -12,6 +12,7 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -25,11 +26,26 @@
             },
         };
     </script>
+
     <title>LaraGigs | Find Laravel Jobs & Projects</title>
 </head>
 <body class="mb-48">
 <nav class="flex justify-between items-center mb-4">
     <a href="/"><img class="w-24" src="{{asset('images/lara.png')}}" alt="" class="logo"/></a>
+
+    @if (request()->has('success'))
+        <div id="success-message" style="background-color: #d4edda; color: #155724; padding: 10px; border: 1px solid #c3e6cb; margin: 10px 0; border-radius: 5px;">
+            {{ request('success') }}
+        </div>
+
+        <script>
+            // Hide the success message after 5 seconds
+            setTimeout(function () {
+                document.getElementById('success-message').style.display = 'none';
+            }, 5000); // 5000ms = 5 seconds
+        </script>
+    @endif
+
     <ul class="flex space-x-6 mr-6 text-lg">
         @auth
         <li>
@@ -71,3 +87,4 @@
 </footer>
 </body>
 </html>
+

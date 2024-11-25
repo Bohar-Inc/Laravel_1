@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -12,9 +13,8 @@ class UserController extends Controller
     public function create(){
         return view('users.register');
     }
-
     //Create new user
-    public function store(Request $request){
+    public function store(Request $request): JsonResponse{
         $formFields = $request->validate([
             'name' => ['required','min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
@@ -30,7 +30,7 @@ class UserController extends Controller
         //login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'Users created and logged in');
+        return response()->json(['message' => 'User created and logged in'],200);
     }
 
     //Logout user
@@ -49,7 +49,7 @@ class UserController extends Controller
     }
 
     //Authenticate user
-    public function authenticate(Request $request){
+    public function authenticate(Request $request):JsonResponse{
         $formFields = $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
@@ -58,10 +58,9 @@ class UserController extends Controller
         if(auth()->attempt($formFields)){
             $request->session()->regenerate();
 
-            return redirect('/')->with('message', 'You have been logged in');
+            return response()->json(['message' => 'You have been logged in'],200);
         }
 
-        return back()->withErrors(['email' => 'These credentials do not match our records.'])->onlyInput('email');
+        return response()->json(['errors' => 'These credentials do not match our records.'],403);
     }
-
 }
