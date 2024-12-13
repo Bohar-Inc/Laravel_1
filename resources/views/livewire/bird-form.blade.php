@@ -11,6 +11,14 @@
       <button>Add a new bird count entry</button>
     </form>
 
+    @if($errors->any())
+        <div>
+            @foreach($errors->all() as $error)
+                <div>{{$error}}</div>
+            @endforeach
+        </div>
+    @endif
+
     <div>
         @foreach($entries as $entry)
             <div>
