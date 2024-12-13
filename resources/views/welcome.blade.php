@@ -6,6 +6,11 @@
     <title>Livewire</title>
 </head>
 <body>
-    <livewire:bird-form/>
+<div>
+    Send event: <livewire:send-event/>
+</div>
+<div>
+    Receive event: <livewire:receive-event/>
+</div>
 </body>
 </html>
