@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Listing; // Import Listing model
+use App\Models\User;    // Import User model
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(10)->create();
+        Listing::factory(6)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Listing::create([
+            'title' => 'Laravel Senior Developer',
+            'tags' => 'laravel, php, javascript',
+            'company' => 'Acme Corp.',
+            'location' => 'Boston, MA',
+            'email' => 'example@acmecorp.com',
+            'website' => 'https://acmecorp.com',
+            'description' => 'We are looking for an experienced Laravel Senior Developer to join our team.', // Add this line
         ]);
     }
 }
