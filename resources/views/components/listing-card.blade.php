@@ -1,12 +1,4 @@
-@php
-    $listing = $listing ?? null;
-@endphp
-
-<div>
-    <h1>{{ $listing->title }}</h1>
-    <p>{{ $listing->description }}</p>
-</div>
-
+@props(['listing'])
 
 <x-card>
   <div class="flex">
