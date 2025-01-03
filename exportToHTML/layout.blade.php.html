@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>layout.blade.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #6a8759;}
+.s6 { color: #cc7832;}
+.s7 { color: #a9b7c6;}
+.s8 { color: #a9b7c6;}
+.s9 { color: #6a8759;}
+.s10 { color: #cc7832;}
+.s11 { color: #6d9cbe;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+layout.blade.php</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">http-equiv</span><span class="s3">=&quot;X-UA-Compatible&quot; </span><span class="s2">content</span><span class="s3">=&quot;IE=edge&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;icon&quot; </span><span class="s2">href</span><span class="s3">=&quot;../../public/images/favicon.ico&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;link</span>
+        <span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot;</span>
+        <span class="s2">href</span><span class="s3">=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css&quot;</span>
+        <span class="s2">integrity</span><span class="s3">=&quot;sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==&quot;</span>
+        <span class="s2">crossorigin</span><span class="s3">=&quot;anonymous&quot;</span>
+        <span class="s2">referrerpolicy</span><span class="s3">=&quot;no-referrer&quot;</span>
+    <span class="s0">/&gt;</span>
+    <span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;https://cdn.tailwindcss.com&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+    <span class="s0">&lt;script&gt;</span>
+        <span class="s1">tailwind.config = {</span>
+            <span class="s1">theme: {</span>
+                <span class="s1">extend: {</span>
+                    <span class="s5">&quot;colors&quot;</span><span class="s4">: {</span>
+                        <span class="s5">&quot;laravel&quot;</span><span class="s4">: </span><span class="s5">&quot;#ef3b2d&quot;</span><span class="s6">,</span>
+                    <span class="s4">}</span><span class="s6">,</span>
+                <span class="s4">}</span><span class="s6">,</span>
+            <span class="s4">}</span><span class="s6">,</span>
+        <span class="s4">}</span><span class="s6">;</span>
+    <span class="s0">&lt;/script&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s4">Senth Vyra | Bohar Solutions </span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body </span><span class="s2">class</span><span class="s3">=&quot;mb-48&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;nav </span><span class="s2">class</span><span class="s3">=&quot;flex justify-between items-center mb-4&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;&quot;</span><span class="s4">/&quot;&gt;</span>
+        <span class="s0">&lt;img </span><span class="s2">class</span><span class="s3">=&quot;w-24&quot; </span><span class="s2">src</span><span class="s3">=&quot;</span><span class="s7">{{ </span><span class="s8">asset</span><span class="s7">(</span><span class="s9">'images/logo.png'</span><span class="s7">) }}</span><span class="s3">&quot; </span><span class="s2">alt</span><span class="s3">=&quot;Logo&quot; </span><span class="s2">class</span><span class="s3">=&quot;logo&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;flex space-x-6 mr-6 text-lg&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;li&gt;</span>
+            <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;register.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;hover:text-laravel&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;i </span><span class="s2">class</span><span class="s3">=&quot;fa-solid fa-user-plus&quot;</span><span class="s0">&gt;&lt;/i&gt; </span><span class="s4">Register</span>
+            <span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;/li&gt;</span>
+        <span class="s0">&lt;li&gt;</span>
+            <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;login.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;hover:text-laravel&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;i </span><span class="s2">class</span><span class="s3">=&quot;fa-solid fa-arrow-right-to-bracket&quot;</span><span class="s0">&gt;&lt;/i&gt; </span><span class="s4">Login</span>
+            <span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;/li&gt;</span>
+    <span class="s0">&lt;/ul&gt;</span>
+<span class="s0">&lt;/nav&gt;</span>
+<span class="s0">&lt;main&gt;</span>
+    <span class="s10">@yield(</span><span class="s9">'content'</span><span class="s10">)</span>
+<span class="s0">&lt;/main&gt;</span>
+
+<span class="s0">&lt;footer</span>
+    <span class="s2">class</span><span class="s3">=&quot;fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center&quot;</span>
+<span class="s0">&gt;</span>
+    <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;ml-2&quot;</span><span class="s0">&gt;</span><span class="s4">Copyright </span><span class="s11">&amp;copy; </span><span class="s4">2022, All Rights reserved</span><span class="s0">&lt;/p&gt;</span>
+    <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;create.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;absolute top-1/3 right-10 bg-black text-white py-2 px-5&quot;</span><span class="s0">&gt;</span>
+        <span class="s4">Post Job</span>
+    <span class="s0">&lt;/a&gt;</span>
+<span class="s0">&lt;/footer&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>
