@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 @props(['listing'])
+=======
+@props
+
+>>>>>>> Stashed changes
 
 <x-card>
   <div class="flex">
